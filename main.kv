@@ -1,0 +1,65 @@
+<Tab>:
+<TooltipMDIconButton@MDIconButton+MDTooltip>:
+<MyLabel>:
+    size_hint_y: None
+    text_size: self.width, None
+    height: self.texture_size[1]
+    halign: 'left'
+
+<MyTile@SmartTileWithStar>
+    size_hint_y: .8
+    height: self.height
+    zoom: 10
+    on_zoom:
+        self.zoom= 10 if self.zoom< 10 else self.zoom
+
+Screen:
+	MDNavigationLayout:
+		ScreenManager:
+			Screen:
+				BoxLayout:
+					orientation: 'vertical'
+                    id: content
+					MDToolbar:
+						title: 'Covid_19 Updates'
+						left_action_items: [['icons/flag.png', app.new_updates]]
+						right_action_items:[['magnify', lambda x: print('magnify')]]
+						elevation: 5
+					MDTabs:
+				        id: android_tabs
+				        on_tab_switch: app.on_tab_switch(*args)
+
+				        Tab:
+				        	text: 'Coronavirus'
+				        	id: corona
+
+				        Tab:
+				        	text: 'Statistics'
+				        	id: load_failure
+
+				        	ScrollView:
+
+					        	BoxLayout:
+					        		id: plots
+					        		orientation: 'vertical'
+					        		spacing: dp(4)
+
+
+				        Tab:
+				        	text: 'Vaccine'
+				        	id: vaccine
+				        	BoxLayout:
+				        		orientation: 'vertical'
+				        		padding: 15, 15
+					        	ScrollView:
+					        		MDList:
+					        			id: box
+
+
+
+				    MDBottomAppBar:
+
+			            MDToolbar:
+			                title: "#MuskUpZimbawe"
+			                icon: 'phone-dial'
+			                mode: 'end'
