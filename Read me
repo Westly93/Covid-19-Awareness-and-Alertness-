@@ -1,0 +1,9 @@
+The project was developed using python libraries Kivymd, pandas, beautifulsoup, matplotlib
+
+kivymd was used for designing of the mobile application
+beautifulsoup was used for secreping different well recognized websites for more reliable information
+matplotlib was then used to provide visual displays on the mobile app 
+pandas was then used for reading and cleaning the data because some data was fetched in form of csv files
+
+The main argument was that websites gives much irrevent information hence having a mobile application just ment for providing covid-19 updates would improving covid-19 information and alertness 
+by giving relevant data at the right time 
